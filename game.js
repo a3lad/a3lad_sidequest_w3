@@ -1,6 +1,6 @@
 let stars = [];
 let score = 0;
-let gameDuration = 30; // seconds
+let gameDuration = 15; // seconds
 let startTime;
 
 function resetGame() {
@@ -10,7 +10,7 @@ function resetGame() {
 }
 
 function drawGame() {
-  background(10, 10, 30);
+  background(114, 48, 137);
   drawBackgroundStars();
   // Timer
   let timeLeft = gameDuration - floor((millis() - startTime) / 1000);
