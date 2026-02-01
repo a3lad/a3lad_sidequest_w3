@@ -1,39 +1,41 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
+Side Quest Week 1: Starlight Scoop
 
 ---
 
-## Authors
+## Author
 
-Karen Cochrane and David Han
+Ayushi Lad
 
 ---
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+In this game, the user is tasked to click on the stars to "collect" them before the timer runs out. The user has 15 seconds to collect them.
 
 ---
 
-## Learning Goals
+## Interaction Instructions
 
-- Understand how to manage multiple game states using a shared currentScreen variable
-- Practice separating code across multiple files for readability and maintenance
-- Implement clickable and keyboard-accessible UI buttons
-- Learn how to route draw(), mousePressed(), and keyPressed() logic based on the active screen
-- Build a basic instructions screen with a functional back button
+Right click on the stars to "collect" them.
 
 ---
 
 ## Assets
 
-N/A
+n/a
+
+---
+
+## References
+
+n/a
 
 ---
 
 ## GenAI
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
+The code was written by ChatGPT 5.2 and some edits were made by Ayushi Lad.
 
 ---
