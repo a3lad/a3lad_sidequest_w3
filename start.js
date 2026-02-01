@@ -1,14 +1,3 @@
-let bgStars = [];
-
-for (let i = 0; i < 120; i++) {
-  bgStars.push({
-    x: random(windowWidth),
-    y: random(windowHeight),
-    size: random(1, 3),
-    twinkle: random(TWO_PI),
-  });
-}
-
 function drawStart() {
   background(114, 48, 137);
   drawBackgroundStars();
@@ -16,7 +5,7 @@ function drawStart() {
   textAlign(CENTER, CENTER);
 
   textSize(48);
-  text("⭐ Star Catcher ⭐", width / 2, 180);
+  text("⭐ STARLIGHT SCOOP ⭐", width / 2, 180);
 
   textSize(22);
   text(
@@ -31,9 +20,9 @@ function drawStart() {
   fill(255, 204, 0);
   rect(width / 2 - 100, 400, 200, 60, 10);
 
-  fill(0);
+  fill(114, 48, 137);
   textSize(24);
-  text("START GAME", width / 2, 430);
+  text("START GAME", width / 2, 433);
 }
 
 function startMousePressed() {
@@ -46,27 +35,5 @@ function startMousePressed() {
   ) {
     resetGame();
     currentScreen = "game";
-  }
-}
-
-function drawBackgroundStars() {
-  noStroke();
-
-  for (let s of bgStars) {
-    let brightness = map(sin(frameCount * 0.05 + s.twinkle), -1, 1, 150, 255);
-    fill(brightness);
-    circle(s.x, s.y, s.size);
-  }
-}
-
-function regenerateBGStars() {
-  bgStars = [];
-  for (let i = 0; i < 120; i++) {
-    bgStars.push({
-      x: random(windowWidth),
-      y: random(windowHeight),
-      size: random(1, 3),
-      twinkle: random(TWO_PI),
-    });
   }
 }

@@ -1,6 +1,6 @@
 function drawWin() {
   background(20, 60, 40);
-
+  drawBackgroundStars();
   fill(255);
   textAlign(CENTER, CENTER);
 

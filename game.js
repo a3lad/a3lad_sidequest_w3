@@ -11,7 +11,7 @@ function resetGame() {
 
 function drawGame() {
   background(10, 10, 30);
-
+  drawBackgroundStars();
   // Timer
   let timeLeft = gameDuration - floor((millis() - startTime) / 1000);
   fill(255);
