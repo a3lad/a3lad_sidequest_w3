@@ -1,7 +1,7 @@
 let currentScreen = "start"; // "start" | "game" | "win"
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
   textFont("Arial");
 }
 
