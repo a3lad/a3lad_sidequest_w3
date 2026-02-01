@@ -1,19 +1,30 @@
-function drawStart() {
-  background(30, 30, 60);
+let bgStars = [];
 
+for (let i = 0; i < 120; i++) {
+  bgStars.push({
+    x: random(windowWidth),
+    y: random(windowHeight),
+    size: random(1, 3),
+    twinkle: random(TWO_PI),
+  });
+}
+
+function drawStart() {
+  background(114, 48, 137);
+  drawBackgroundStars();
   fill(255);
   textAlign(CENTER, CENTER);
 
   textSize(48);
-  text("⭐ Star Catcher ⭐", width / 2, 120);
+  text("⭐ Star Catcher ⭐", width / 2, 180);
 
   textSize(22);
   text(
-    "Stars will appear randomly on the screen.\n" +
+    "Capture the stars by clicking on them to increase your score.\n" +
       "Click as many stars as you can before time runs out!\n\n" +
-      "Each star disappears after a short time — be quick!",
+      "Good luck and have fun!",
     width / 2,
-    260,
+    310,
   );
 
   // Start button
@@ -35,5 +46,27 @@ function startMousePressed() {
   ) {
     resetGame();
     currentScreen = "game";
+  }
+}
+
+function drawBackgroundStars() {
+  noStroke();
+
+  for (let s of bgStars) {
+    let brightness = map(sin(frameCount * 0.05 + s.twinkle), -1, 1, 150, 255);
+    fill(brightness);
+    circle(s.x, s.y, s.size);
+  }
+}
+
+function regenerateBGStars() {
+  bgStars = [];
+  for (let i = 0; i < 120; i++) {
+    bgStars.push({
+      x: random(windowWidth),
+      y: random(windowHeight),
+      size: random(1, 3),
+      twinkle: random(TWO_PI),
+    });
   }
 }

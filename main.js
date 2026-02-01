@@ -2,6 +2,7 @@ let currentScreen = "start"; // "start" | "game" | "win"
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  regenerateBGStars();
   textFont("Arial");
 }
 
