@@ -1,48 +1,31 @@
-// NOTE: Do NOT add setup() or draw() in this file
-// setup() and draw() live in main.js
-// This file only defines:
-// 1) drawWin() → what the win screen looks like
-// 2) input handlers → how the player returns to the start screen
-//
-// This file is intentionally very similar to lose.js.
-// The goal is to show that win/lose screens are often
-// simple “end states” with minimal logic.
-
-// ------------------------------------------------------------
-// Main draw function for win screen
-// ------------------------------------------------------------
-// drawWin() is called from main.js
-// only when currentScreen === "win"
 function drawWin() {
-  // Green-tinted background to communicate success
-  background(200, 255, 200);
+  background(20, 60, 40);
 
-  fill(0);
+  fill(255);
   textAlign(CENTER, CENTER);
 
-  // Main success message
-  textSize(40);
-  text("You Win!", width / 2, 300);
+  textSize(46);
+  text("⏰ Time's Up!", width / 2, 150);
 
-  // Instruction text
-  textSize(20);
-  text("Click or press R to return to Start.", width / 2, 360);
+  textSize(28);
+  text("You collected " + score + " stars!", width / 2, 250);
+
+  // Button back to instructions
+  fill(255, 204, 0);
+  rect(width / 2 - 130, 380, 260, 60, 12);
+
+  fill(0);
+  textSize(22);
+  text("PLAY AGAIN", width / 2, 410);
 }
 
-// ------------------------------------------------------------
-// Mouse input for win screen
-// ------------------------------------------------------------
-// Any mouse click returns the player to the start screen
 function winMousePressed() {
-  currentScreen = "start";
-}
-
-// ------------------------------------------------------------
-// Keyboard input for win screen
-// ------------------------------------------------------------
-// R is commonly used for “restart” in games
-function winKeyPressed() {
-  if (key === "r" || key === "R") {
+  if (
+    mouseX > width / 2 - 130 &&
+    mouseX < width / 2 + 130 &&
+    mouseY > 380 &&
+    mouseY < 440
+  ) {
     currentScreen = "start";
   }
 }
